@@ -1,29 +1,24 @@
 <template>
     <div class="todo-container">
         <h1>ToDoリスト</h1>
-        <TaskAdd
-        v-bind:errorMessageProps="errorMessage"
-        @taskAdd="onTaskAdd"
-        />
+        <TaskAdd v-bind:errorMessageProps="errorMessage" @taskAdd="onTaskAdd" />
 
         <div class="row justify-content-center">
             <div class="col-8" style="text-align: right;">
                 <button type="button" class="btn btn-info transparent mb-3" @click="onClickButtonSave">
-                <i class="fas fa-save"></i> 保存
+                    <i class="fas fa-save"></i> 保存
                 </button>
             </div>
         </div>
-        
+
         <div class="task-list">
-           <TaskItem
-           v-bind:taskListProps="taskList"
-           />
+            <TaskItem v-bind:taskListProps="taskList" />
         </div>
         <!-- <pre>
             {{ taskList }}
         </pre> -->
     </div>
-  </template>
+</template>
   
   <script>
   import TaskAdd from '../parts/TaskAdd.vue'
@@ -83,12 +78,17 @@
             });
         },
     }
-
 }
   </script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
+  .attendance {
+    /* text-align: left; */
+  }
+  .start-btn {
+    margin-right: 0.5%;
+  }
   h3 {
     margin: 40px 0 0;
   }

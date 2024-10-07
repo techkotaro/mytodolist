@@ -2,18 +2,19 @@
     <tbody>
         <tr>
             <td class="col-1">{{ task.id }}</td>
-            <td class="col-7">
+            <td class="col-5">
                 <template v-if="task.editing">
-                    <input type="text" class="form-control transparent" id="formGroupExampleInput" v-model="task.name" @keypress="OnClickEditEnd(task)" placeholder="task.name">
+                    <input type="text" class="form-control transparent" id="formGroupExampleInput" v-model="task.name"
+                        @keypress="OnClickEditEnd(task)" placeholder="task.name">
                 </template>
                 <template v-else>
                     <p>{{ task.name }}</p>
                 </template>
             </td>
-            <td class="col-2">
+            <td class="col-1">
                 <button type="button" class="btn btn-success" @click="OnClickEditStart(task)">編集</button>
             </td>
-            <td class="col-2">
+            <td class="col-1">
                 <button type="button" class="btn btn-danger" @click="OnClickDelete(task)">削除</button>
             </td>
         </tr>
@@ -41,7 +42,7 @@ export default {
         },
         OnClickDelete:function(task){
             this.$emit('delete',task)
-        }
+        },
     }
 }
 </script>
